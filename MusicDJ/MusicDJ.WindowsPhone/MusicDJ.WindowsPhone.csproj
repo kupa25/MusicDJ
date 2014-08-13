@@ -81,6 +81,14 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <ProjectReference Include="..\..\Contract\Contract.csproj">
+      <Project>{63f094aa-6c64-4947-83b1-678758ca8aa2}</Project>
+      <Name>Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\XboxMusicClient\XboxMusicClient.csproj">
+      <Project>{12c43a5c-a071-4629-8157-a63cbbce0b1e}</Project>
+      <Name>XboxMusicClient</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainPage.xaml.cs">

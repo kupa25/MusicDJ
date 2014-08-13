@@ -9,6 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <TextBox x:Name="SearchText" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="245" PlaceholderText="Artist / Song / Album"/>
+        <Button x:Name="BtnSearch" Content="Search" HorizontalAlignment="Left" Margin="281,0,0,0" VerticalAlignment="Top" Click="BtnSearch_Click"/>
+        <ListView x:Name="ResultList" HorizontalAlignment="Left" Height="577" Margin="10,53,0,0" VerticalAlignment="Top" Width="380"/>
 
     </Grid>
 </Page>

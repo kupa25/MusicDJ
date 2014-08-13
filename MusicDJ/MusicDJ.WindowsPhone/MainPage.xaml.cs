@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
+﻿using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+using Microsoft.Xbox.Music.Platform.Client;
+using Microsoft.Xbox.Music.Platform.Contract.DataModel;
 
 namespace MusicDJ
 {
@@ -22,8 +11,14 @@ namespace MusicDJ
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private string clientId;
+        private string clientSecret;
+
         public MainPage()
         {
+            clientId = "SimpleDJ_802";
+            clientSecret = "/Cthq+SIvtTJk1P9x04JX7P3H2RVzxZXqht0Yq5LqMg=";
+
             this.InitializeComponent();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
@@ -43,6 +38,24 @@ namespace MusicDJ
             // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
+        }
+
+        private async void BtnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            IXboxMusicClient client = XboxMusicClientFactory.CreateXboxMusicClient(clientId, clientSecret);
+
+            // Use null to get your current geography.
+            // Specify a 2 letter country code (such as "US" or "DE") to force a specific country.
+            string country = null;
+            ResultList.Items.Clear();
+
+            // Search for albums in your current geography
+            ContentResponse searchResponse = await client.SearchAsync(Namespace.music, SearchText.Text, filter: SearchFilter.Albums);
+
+            foreach (Album albumResult in searchResponse.Albums.Items)
+            {
+                ResultList.Items.Add(albumResult.Name);
+            }
         }
     }
 }
