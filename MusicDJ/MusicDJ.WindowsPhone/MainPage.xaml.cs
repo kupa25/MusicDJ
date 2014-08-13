@@ -1,4 +1,8 @@
-﻿using Windows.UI.Xaml;
+﻿using System;
+using System.Globalization;
+using Windows.Devices.Geolocation;
+using Windows.Devices.Geolocation.Geofencing;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Microsoft.Xbox.Music.Platform.Client;
@@ -13,11 +17,13 @@ namespace MusicDJ
     {
         private string clientId;
         private string clientSecret;
+        private Geolocator geolocator;
 
         public MainPage()
         {
             clientId = "SimpleDJ_802";
             clientSecret = "/Cthq+SIvtTJk1P9x04JX7P3H2RVzxZXqht0Yq5LqMg=";
+            geolocator = new Geolocator();
 
             this.InitializeComponent();
 
@@ -56,6 +62,49 @@ namespace MusicDJ
             {
                 ResultList.Items.Add(albumResult.Name);
             }
+        }
+
+        private async void CreateGeofence()
+        {
+            GeofenceMonitor.Current.Geofences.Clear();
+
+            BasicGeoposition basicGeoposition = new BasicGeoposition();
+            Geoposition geoposition = await geolocator.GetGeopositionAsync();
+            Geofence geofence;
+
+            basicGeoposition.Latitude = geoposition.Coordinate.Latitude;
+            basicGeoposition.Longitude = geoposition.Coordinate.Longitude;
+            basicGeoposition.Altitude = (double) geoposition.Coordinate.Altitude;
+            double radius = 10.0;
+
+            Geocircle geocircle = new Geocircle(basicGeoposition, radius);
+
+            // want to listen for enter geofence, exit geofence and remove geofence events
+            // you can select a subset of these event states
+            MonitoredGeofenceStates mask = 0;
+
+            mask |= MonitoredGeofenceStates.Entered;
+            mask |= MonitoredGeofenceStates.Exited;
+            mask |= MonitoredGeofenceStates.Removed;
+
+            // setting up how long you need to be in geofence for enter event to fire
+            TimeSpan dwellTime = new TimeSpan(1, 0, 0);
+
+            // setting up how long the geofence should be active
+            TimeSpan duration = new TimeSpan(0,10,0);
+
+            // setting up the start time of the geofence
+            DateTimeOffset startTime = DateTimeOffset.Now;
+            
+            geofence = new Geofence("Test", geocircle, mask, true);
+
+            GeofenceMonitor.Current.Geofences.Add(geofence);
+
+        }
+
+        private void Ellipse_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            CreateGeofence();
         }
     }
 }
