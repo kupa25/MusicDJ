@@ -8,9 +8,13 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <StackPanel>
         <TextBlock HorizontalAlignment="Left" Margin="133,10,0,0" TextWrapping="Wrap" Text="Album" VerticalAlignment="Top" Height="40" Width="90" FontSize="16"/>
-        <TextBlock x:Name="AlbumDetail1" HorizontalAlignment="Left" Margin="10,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="590" Width="380"/>
+        <Image x:Name="AlbumImage" Height="100"/>
+        <TextBlock x:Name="Artist" TextWrapping="Wrap" Text="Loading..."/>
+        <ListView x:Name="TrackDetail" HorizontalAlignment="Left" 
+                  Height="Auto" VerticalAlignment="Top" 
+                  Width="Auto"/>
 
-    </Grid>
+    </StackPanel>
 </Page>

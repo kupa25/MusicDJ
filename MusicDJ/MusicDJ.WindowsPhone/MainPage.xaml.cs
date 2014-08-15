@@ -18,11 +18,14 @@ namespace MusicDJ
         private string clientId;
         private string clientSecret;
         private Geolocator geolocator;
+        IXboxMusicClient client;
 
         public MainPage()
         {
             clientId = "SimpleDJ_802";
             clientSecret = "/Cthq+SIvtTJk1P9x04JX7P3H2RVzxZXqht0Yq5LqMg=";
+            client = XboxMusicClientFactory.CreateXboxMusicClient(clientId, clientSecret);
+
             geolocator = new Geolocator();
 
             this.InitializeComponent();
@@ -48,8 +51,6 @@ namespace MusicDJ
 
         private async void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
-            IXboxMusicClient client = XboxMusicClientFactory.CreateXboxMusicClient(clientId, clientSecret);
-
             // Use null to get your current geography.
             // Specify a 2 letter country code (such as "US" or "DE") to force a specific country.
             string country = null;
@@ -60,7 +61,7 @@ namespace MusicDJ
 
             foreach (Album albumResult in searchResponse.Albums.Items)
             {
-                ResultList.Items.Add(albumResult.Name);
+                ResultList.Items.Add(albumResult);
             }
         }
 
@@ -109,7 +110,9 @@ namespace MusicDJ
 
         private void ResultList_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
-            if (!Frame.Navigate(typeof (AlbumDetail), ResultList.SelectedItem))
+            var albumId = ResultList.SelectedItem == null ? string.Empty : ((Album) ResultList.SelectedItem).Id;
+
+            if (!Frame.Navigate(typeof (AlbumDetail), albumId))
             {
                 throw new Exception("Failed to navigate");
             }

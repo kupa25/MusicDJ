@@ -7,6 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <DataTemplate x:Key="DataTemplate1">
+            <Grid Height="39" Width="174">
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
 
     <Grid>
         <TextBox x:Name="SearchText" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" PlaceholderText="Artist / Song / Album"/>
@@ -14,7 +21,7 @@
         <ListView x:Name="ResultList"
                   HorizontalAlignment="Left" 
                   Height="577" Margin="10,53,0,0" 
-                  VerticalAlignment="Top" Width="380" Tapped="ResultList_Tapped"/>
+                  VerticalAlignment="Top" Width="380" Tapped="ResultList_Tapped" ItemTemplate="{StaticResource DataTemplate1}"/>
         <Ellipse HorizontalAlignment="Left" Height="38" Margin="352,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="38" Tapped="Ellipse_Tapped">
             <Ellipse.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
