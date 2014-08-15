@@ -106,5 +106,13 @@ namespace MusicDJ
         {
             CreateGeofence();
         }
+
+        private void ResultList_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            if (!Frame.Navigate(typeof (AlbumDetail), ResultList.SelectedItem))
+            {
+                throw new Exception("Failed to navigate");
+            }
+        }
     }
 }

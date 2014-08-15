@@ -11,7 +11,10 @@
     <Grid>
         <TextBox x:Name="SearchText" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" PlaceholderText="Artist / Song / Album"/>
         <Button x:Name="BtnSearch" Content="Search" HorizontalAlignment="Left" Margin="230,-1,0,0" VerticalAlignment="Top" Click="BtnSearch_Click"/>
-        <ListView x:Name="ResultList" HorizontalAlignment="Left" Height="577" Margin="10,53,0,0" VerticalAlignment="Top" Width="380"/>
+        <ListView x:Name="ResultList"
+                  HorizontalAlignment="Left" 
+                  Height="577" Margin="10,53,0,0" 
+                  VerticalAlignment="Top" Width="380" Tapped="ResultList_Tapped"/>
         <Ellipse HorizontalAlignment="Left" Height="38" Margin="352,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="38" Tapped="Ellipse_Tapped">
             <Ellipse.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
