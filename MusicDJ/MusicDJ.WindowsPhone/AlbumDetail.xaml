@@ -9,8 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <StackPanel>
-        <TextBlock HorizontalAlignment="Left" Margin="133,10,0,0" TextWrapping="Wrap" Text="Album" VerticalAlignment="Top" Height="40" Width="90" FontSize="16"/>
-        <Image x:Name="AlbumImage" Height="100"/>
+        <Image x:Name="AlbumImage" Height="100" Tag="" ToolTipService.ToolTip=""/>
         <TextBlock x:Name="Artist" TextWrapping="Wrap" Text="Loading..."/>
         <ListView x:Name="TrackDetail" HorizontalAlignment="Left" 
                   Height="Auto" VerticalAlignment="Top" 

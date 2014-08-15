@@ -3,6 +3,8 @@ using System.Linq;
 using Windows.Phone.UI.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -43,7 +45,8 @@ namespace MusicDJ
 
             // Display information about the album
             Album album = lookupResponse.Albums.Items[0];
-            //AlbumImage.BaseUri = album.GetImageUrl(800, 800);
+            AlbumImage.Source = new BitmapImage(new Uri(album.GetImageUrl(800, 800)));
+
             //AlbumDetailView.Text += string.Format("Album: {0} (link: {1})", album.Name, album.GetLink(ContentExtensions.LinkAction.Play));
 
             Artist.Text = String.Join(",", album.Artists.Select(x => x.Artist.Name));
