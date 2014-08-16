@@ -32,4 +32,9 @@
         </Ellipse>
 
     </Grid>
+    <Page.BottomAppBar>
+        <CommandBar x:Name="btnAbout" Tapped="btnAbout_Tapped" Visibility="Collapsed">
+            <AppBarButton Label="About" Icon="Contact"/>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

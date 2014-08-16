@@ -40,13 +40,7 @@ namespace MusicDJ
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            // TODO: Prepare page for display here.
-
-            // TODO: If your application contains multiple pages, ensure that you are
-            // handling the hardware Back button by registering for the
-            // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
-            // If you are using the NavigationHelper provided by some templates,
-            // this event is handled for you.
+            btnAbout.Visibility = Visibility.Collapsed;
         }
 
         private async void BtnSearch_Click(object sender, RoutedEventArgs e)
@@ -113,6 +107,14 @@ namespace MusicDJ
             var albumId = ResultList.SelectedItem == null ? string.Empty : ((Album) ResultList.SelectedItem).Id;
 
             if (!Frame.Navigate(typeof (AlbumDetail), albumId))
+            {
+                throw new Exception("Failed to navigate");
+            }
+        }
+
+        private void btnAbout_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            if (!Frame.Navigate(typeof (About)))
             {
                 throw new Exception("Failed to navigate");
             }
