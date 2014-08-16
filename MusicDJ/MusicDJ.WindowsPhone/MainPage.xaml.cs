@@ -40,7 +40,7 @@ namespace MusicDJ
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            btnAbout.Visibility = Visibility.Collapsed;
+            //btnAbout.Visibility = Visibility.Collapsed;
         }
 
         private async void BtnSearch_Click(object sender, RoutedEventArgs e)
@@ -112,9 +112,9 @@ namespace MusicDJ
             }
         }
 
-        private void btnAbout_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!Frame.Navigate(typeof (About)))
+            if (!Frame.Navigate(typeof(About)))
             {
                 throw new Exception("Failed to navigate");
             }
