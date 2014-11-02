@@ -184,13 +184,25 @@
     <Language Code="vi-vn" InMinimumRequirementSet="true" />
   </SupportedLocales>
   <ProductReservedInfo>
-    <MainPackageIdentityName>31366Kshitij.SimpleDJ</MainPackageIdentityName>
+    <MainPackageIdentityName>31366Kshitij.xboxmusicdj</MainPackageIdentityName>
     <ReservedNames>
-      <ReservedName>SimpleDJ</ReservedName>
+      <ReservedName>xboxmusicdj</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
+    <MainPackageIdentityName>31366Kshitij.CoffeeTime</MainPackageIdentityName>
+    <MainPackageIdentityName>31366Kshitij.KshitijRss</MainPackageIdentityName>
+    <MainPackageIdentityName>31366Kshitij.MoviePlanning</MainPackageIdentityName>
     <MainPackageIdentityName>31366Kshitij.PasswordPal</MainPackageIdentityName>
+    <MainPackageIdentityName>31366Kshitij.SimpleDJ</MainPackageIdentityName>
+    <MainPackageIdentityName>31366Kshitij.SixPackAbs</MainPackageIdentityName>
+    <MainPackageIdentityName>31366Kshitij.WeightTracker</MainPackageIdentityName>
   </AccountPackageIdentityNames>
-  <PackageInfoList LandingUrl="https://dev.windowsphone.com/AppSubmission/AssociationLanding?windowsProductId=d10165b3-35f8-468d-b52a-3b2665e1da03" />
+  <PackageInfoList LandingUrl="https://dev.windowsphone.com/AppSubmission/AssociationLanding?windowsProductId=36fb66c1-bc58-4920-a15c-35e99f788361">
+    <PackageInfo>
+      <OsMinVersion>6.3.0.0</OsMinVersion>
+      <PackageArchitecture>neutral</PackageArchitecture>
+      <PackageMaxArchitectureVersion>1.5.0.2</PackageMaxArchitectureVersion>
+    </PackageInfo>
+  </PackageInfoList>
 </StoreAssociation>

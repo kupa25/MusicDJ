@@ -50,12 +50,15 @@ namespace MusicDJ
             string country = null;
             ResultList.Items.Clear();
 
-            // Search for albums in your current geography
-            ContentResponse searchResponse = await client.SearchAsync(Namespace.music, SearchText.Text, filter: SearchFilter.Albums);
-
-            foreach (Album albumResult in searchResponse.Albums.Items)
+            if (!string.IsNullOrEmpty(SearchText.Text))
             {
-                ResultList.Items.Add(albumResult);
+                // Search for albums in your current geography
+                ContentResponse searchResponse = await client.SearchAsync(Namespace.music, SearchText.Text, filter: SearchFilter.Albums);
+
+                foreach (Album albumResult in searchResponse.Albums.Items)
+                {
+                    ResultList.Items.Add(albumResult);
+                }
             }
         }
 

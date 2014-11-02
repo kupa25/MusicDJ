@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="31366Kshitij.SimpleDJ" Publisher="CN=31DAE921-5108-420E-A31E-D77E1C37C4AF" Version="1.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="7428a8d2-9569-43e1-8089-b3b5f18e782f" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="31366Kshitij.xboxmusicdj" Publisher="CN=31DAE921-5108-420E-A31E-D77E1C37C4AF" Version="1.5.0.3" />
+  <mp:PhoneIdentity PhoneProductId="6d7999a8-aec4-4c81-af02-1ca699d4a17a" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>SimpleDJ</DisplayName>
+    <DisplayName>xboxmusicdj</DisplayName>
     <PublisherDisplayName>Kshitij</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
