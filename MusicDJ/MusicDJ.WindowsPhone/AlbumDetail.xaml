@@ -11,12 +11,12 @@
     <Grid>
     <StackPanel>
         <Image x:Name="AlbumImage" Height="100" Tag="" ToolTipService.ToolTip=""/>
-        <TextBlock x:Name="Artist" TextWrapping="Wrap" Text="Loading..."/>
+        <TextBlock x:Name="Artist" TextWrapping="Wrap" Text="Loading..." FontSize="24" HorizontalAlignment="Center"/>
         
     </StackPanel>
         <ListView x:Name="TrackDetail" 
                   Height="Auto" 
-                  Width="Auto" FontSize="20" Margin="10,125,0,0"/>
+                  Width="Auto" FontSize="20" Margin="10,125,0,0" Tapped="TrackDetail_Tapped"/>
     </Grid>
 
 </Page>

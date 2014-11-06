@@ -47,15 +47,7 @@ namespace MusicDJ
             Album album = lookupResponse.Albums.Items[0];
             AlbumImage.Source = new BitmapImage(new Uri(album.GetImageUrl(800, 800)));
 
-            //AlbumDetailView.Text += string.Format("Album: {0} (link: {1})", album.Name, album.GetLink(ContentExtensions.LinkAction.Play));
-
             Artist.Text = String.Join(",", album.Artists.Select(x => x.Artist.Name));
-
-            //foreach (Contributor contributor in album.Artists)
-            //{
-            //    Artist artist = contributor.Artist;
-            //    Artist.Text += string.Format("Artist: {0} (link: {1})", artist.Name, artist.GetLink());
-            //}
             TrackDetail.Items.Clear();
 
             foreach (Track track in album.Tracks.Items)
@@ -77,6 +69,13 @@ namespace MusicDJ
                 frame.GoBack();
                 e.Handled = true;
             }
+        }
+
+        private async void TrackDetail_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            // Request a preview stream URL for the clicked item
+            //Track track = browseResults.Tracks.Items.First();
+            //StreamResponse streamResponse = await client.PreviewAsync(track.Id, clientId).Log();
         }
     }
 }

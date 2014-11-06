@@ -8,8 +8,13 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <WebView x:Name="AboutWebView"/>
+    <StackPanel Orientation="Vertical">
+        <StackPanel.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Assets/SplashScreen.png"/>
+        </StackPanel.Background>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="About" FontSize="20" VerticalAlignment="Top" Foreground="#FFE81515" FontWeight="Bold"/>
+        <TextBlock Text="This app is a first version of my idea.  Currently You can search for an artist, song or an album and then click into it for more details.  We have a manual geofencing button to the right of the textbox for right now, but in future iterations we will make that automatic.  We want to track what people are searching for near your location." Height="119" TextWrapping="Wrap" FontSize="15" Foreground="#FF131313" Margin="0,10,0,0" />
+        <TextBlock Text="Contact Developer" FontSize="24" Tapped="TextBlock_Tapped" Foreground="#FF121BDA"></TextBlock>
 
-    </Grid>
+    </StackPanel>
 </Page>

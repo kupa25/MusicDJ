@@ -26,7 +26,7 @@ namespace MusicDJ
         public About()
         {
             this.InitializeComponent();
-            AboutWebView.Source = new Uri("http://kshitijwebspace.azurewebsites.net");
+            
             HardwareButtons.BackPressed += HardwareButtons_BackPressed;
         }
 
@@ -51,6 +51,18 @@ namespace MusicDJ
             {
                 frame.GoBack();
                 e.Handled = true;
+            }
+        }
+
+        private async void TextBlock_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            var mailUri = new Uri("mailto:kupa25@live.com");
+            // Launch the URI
+            var success = await Windows.System.Launcher.LaunchUriAsync(mailUri);
+
+            if (!success)
+            {
+                //MessageBox box = new MessageBox()
             }
         }
     }

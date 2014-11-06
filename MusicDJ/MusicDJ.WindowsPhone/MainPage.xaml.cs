@@ -22,8 +22,8 @@ namespace MusicDJ
 
         public MainPage()
         {
-            clientId = "SimpleDJ_802";
-            clientSecret = "/Cthq+SIvtTJk1P9x04JX7P3H2RVzxZXqht0Yq5LqMg=";
+            clientId = "XboxMusicDJ_802";
+            clientSecret = "KeVaxFVSlXqt9hMWTUPLI90aD3OKLNI/qns6kHJ6Cy4=";
             client = XboxMusicClientFactory.CreateXboxMusicClient(clientId, clientSecret);
 
             geolocator = new Geolocator();
