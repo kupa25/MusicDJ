@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="31366Kshitij.xboxmusicdj" Publisher="CN=31DAE921-5108-420E-A31E-D77E1C37C4AF" Version="1.5.0.1" />
-  <mp:PhoneIdentity PhoneProductId="cc0d2097-97b9-458c-a7ed-1e8c52ff8f7f" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="31366Kshitij.xboxmusicdj" Publisher="CN=31DAE921-5108-420E-A31E-D77E1C37C4AF" Version="1.5.0.3" />
+  <mp:PhoneIdentity PhoneProductId="6d7999a8-aec4-4c81-af02-1ca699d4a17a" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>xboxmusicdj</DisplayName>
     <PublisherDisplayName>Kshitij</PublisherDisplayName>
@@ -16,8 +16,8 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MusicDJ.WindowsPhone.App">
-      <m3:VisualElements DisplayName="MusicDJ" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="MusicDJ.WindowsPhone" ForegroundText="light" BackgroundColor="transparent">
-        <m3:DefaultTile Square71x71Logo="Assets\Square71x71Logo.png" Wide310x150Logo="Assets\Wide310x150Logo.jpg">
+      <m3:VisualElements DisplayName="MusicDJ" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="MusicDJ.WindowsPhone" ForegroundText="light" BackgroundColor="transparent">
+        <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png">
         </m3:DefaultTile>
         <m3:SplashScreen Image="Assets\SplashScreen.png" />
         <m3:InitialRotationPreference>
